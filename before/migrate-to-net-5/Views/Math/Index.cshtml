@@ -1,0 +1,47 @@
+﻿@{
+    ViewBag.Title = "Math";
+}
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+
+<h4>Add</h4>
+@using (Html.BeginForm("Add", "Math", FormMethod.Post))
+{
+    @:Number 1: @Html.TextBox("AddNumber1")<br />
+    @:Number 2: @Html.TextBox("AddNumber2")<br />
+    @ViewBag.AddResult<br />
+    <input type="submit" value="Add" />
+}
+
+<hr />
+
+<h4>Subtract</h4>
+@using (Html.BeginForm("Subtract", "Math", FormMethod.Post))
+{
+    @:Number 1: @Html.TextBox("SubtractNumber1")<br />
+    @:Number 2: @Html.TextBox("SubtractNumber2")<br />
+    @ViewBag.SubtractResult<br />
+    <input type="submit" value="Subtract" />
+}
+
+<hr />
+
+<h4>Multiply</h4>
+@using (Html.BeginForm("Multiply", "Math", FormMethod.Post))
+{
+    @:Number 1: @Html.TextBox("MultiplyNumber1")<br />
+    @:Number 2: @Html.TextBox("MultiplyNumber2")<br />
+    @ViewBag.MultiplyResult<br />
+    <input type="submit" value="Multiply" />
+}
+
+<hr />
+
+<h4>Divide</h4>
+@using (Html.BeginForm("Divide", "Math", FormMethod.Post))
+{
+    @:Number 1: @Html.TextBox("DivideNumber1")<br />
+    @:Number 2: @Html.TextBox("DivideNumber2")<br />
+    @ViewBag.DivideResult<br />
+    <input type="submit" value="Divide" />
+}

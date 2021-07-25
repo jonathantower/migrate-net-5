@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "Data";
+}
+<h2>@ViewBag.Title</h2>
+<h3>@ViewBag.Message</h3>
+
+<ul id="mathematicians">
+    <div>Loading...</div>
+</ul>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                dataType: "json",
+                url: "/api/data",
+                success: function (data) {
+                    $("#mathematicians").empty();
+                    for (var i = 0; i < data.length; i++) {
+                        var name = data[i];
+                        $("<li>" + name + "</li>").appendTo("#mathematicians");
+                    }
+                }
+            });
+        });
+    </script>
+}
