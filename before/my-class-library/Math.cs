@@ -32,14 +32,13 @@ namespace Demo.ClassLibrary
         {
             var json = @"[ 
                 { ""Name"": ""Archimedes"" },  
-                { ""Name"": ""Euclid"" }  
+                { ""Name"": ""Euclid"" },
                 { ""Name"": ""Isaac Newton"" },  
                 { ""Name"": ""Pythagoras"" }, 
-                { ""Name"": ""Rene Descartes"" },  
+                { ""Name"": ""Rene Descartes"" }
             ]";
             
             var data = Newtonsoft.Json.JsonConvert.DeserializeObject<List<MathematicianDto>>(json);
-            //var data = System.Text.Json.JsonSerializer.Deserialize<List<MathematicianDto>>(json);
 
             return data.Select(i => i.Name).ToList();
         }
